@@ -72,7 +72,7 @@
 
 .character-section {
     padding-left: 0; /* Removed padding */
-    padding-right: 20px; /* Added padding based on original */
+    padding-right: 30px; /* Added padding based on original */
     display: flex; /* Use flexbox to arrange internal content */
     flex-direction: column; /* Stack internal content vertically */
     align-items: center; /* Center content horizontally */
