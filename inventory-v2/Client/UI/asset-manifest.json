@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8e6499d7.css",
+    "main.js": "./static/js/main.af632ca9.js",
+    "static/media/character.png": "./static/media/character.df49efba0013927f435f.png",
+    "static/media/background1.jpg": "./static/media/background1.72b0ead0b6bdcd8674d6.jpg",
+    "static/media/LinotypeBrewery-Medium.ttf": "./static/media/LinotypeBrewery-Medium.f817454f947acc8dfff5.ttf",
+    "index.html": "./index.html",
+    "main.8e6499d7.css.map": "./static/css/main.8e6499d7.css.map",
+    "main.af632ca9.js.map": "./static/js/main.af632ca9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e6499d7.css",
+    "static/js/main.af632ca9.js"
+  ]
+}

@@ -1,0 +1,317 @@
+@font-face {
+    font-family: 'Linotype Brewery';
+    src: url('../public/police/LinotypeBrewery-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.inventory-container {
+    width: 1200px; /* Adjusted width based on original */
+    height: 700px; /* Adjusted height based on original */
+    background-image: url('../public/images/background1.jpg'); /* Use the corrected background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #555; /* Add a border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+    color: #eee; /* Light text color */
+    font-family: 'Linotype Brewery', sans-serif; /* Use the copied font */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack header and main content vertically */
+    border-radius: 15px; /* Adjusted border-radius based on original */
+    overflow: hidden; /* Hide anything outside the rounded corners */
+}
+
+.inventory-header {
+    background-color: rgba(0, 0, 0, 0.4); /* Adjusted transparency based on original */
+    backdrop-filter: blur(5px); /* Added blur based on original */
+    -webkit-backdrop-filter: blur(5px); /* Added webkit blur */
+    color: #CEC597; /* Adjusted color based on original */
+    text-align: center;
+    padding: 10px 20px; /* Adjusted padding to make space for images */
+    font-size: 28px; /* Adjusted font size based on original */
+    letter-spacing: 1px; /* Added letter spacing based on original */
+    border-bottom: 1px solid #6B664F; /* Adjusted border color based on original */
+    font-family: 'Linotype Brewery', sans-serif; /* Ensure header uses the correct font */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically center items */
+}
+
+.header-image {
+    width: 450px; /* Adjust width as needed */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.header-image.left {
+    margin-right: 14px; /* Space between image and text */
+}
+
+.header-image.right {
+    margin-left: 14px; /* Space between text and image */
+}
+
+.inventory-main {
+    display: flex; /* Arrange left and right sections horizontally */
+    flex-grow: 1; /* Allow main content to take up remaining space */
+    padding: 15px; /* Adjusted padding based on original */
+    gap: 45px; /* Adjusted gap based on original */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.inventory-left {
+    flex: 2; /* Allocate more space to the left section */
+    display: flex; /* Arrange backpack and bottom slots vertically */
+    flex-direction: column;
+    padding-right: 0; /* Removed padding */
+    padding-left: 10px; /* Added padding based on original */
+}
+
+.character-section {
+    padding-left: 0; /* Removed padding */
+    padding-right: 20px; /* Added padding based on original */
+    display: flex; /* Use flexbox to arrange internal content */
+    flex-direction: column; /* Stack internal content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 562px; /* Adjusted height based on original */
+    width: 600px; /* Adjusted width based on original */
+    margin-top: 30px; /* Adjusted margin based on original */
+    background-image: url('../public/images/character.png'); /* Added character background */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjusted background color */
+    border-radius: 45px; /* Adjusted border-radius */
+    position: relative; /* Needed for absolute positioning of character-slots-container */
+}
+
+/* Basic styles for sections within left and right */
+.backpack-section,
+.bottom-slots,
+.character-display, /* This will be the background image now */
+
+
+.backpack-section {
+    flex-grow: 1; /* Allow backpack section to take up remaining space in left column */
+    display: flex; /* Use flexbox for tabs and grid */
+    flex-direction: column;
+    padding-left: 10px; /* Adjusted padding based on original */
+}
+
+.bottom-slots {
+    display: grid; /* Use CSS Grid for alignment */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns like the backpack grid */
+    padding-left: 10px; /* Adjusted padding based on original */
+    padding-top: 15px; /* Adjusted padding based on original */
+    /* Removed align-items as it's not needed with grid for this layout */
+}
+
+.consumables {
+    grid-column: span 2; /* Span 2 columns */
+    background-color: transparent; /* Make background transparent */
+    border-radius: 0; /* Remove border-radius */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+}
+
+.tool {
+    grid-column: span 3; /* Span 3 columns */
+    background-color: transparent; /* Make background transparent */
+    border-radius: 0; /* Remove border-radius */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+}
+
+
+.character-display {
+    /* This div is now primarily for the background image in the character-section */
+    height: 100%; /* Take full height of parent */
+    width: 100%; /* Take full width of parent */
+    background-image: none; /* Remove background image from this div */
+    background-color: transparent; /* Make background transparent */
+    margin-bottom: 0; /* Remove margin */
+    border-radius: 0; /* Remove border-radius */
+    border: none; /* Remove border */
+    position: absolute; /* Position absolutely within character-section */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure it's behind the slots */
+}
+
+.character-slots-container { /* New styles for the container of the two columns */
+    display: flex; /* Arrange left and right slots horizontally */
+    gap: 400px; /* Adjusted gap based on original */
+    position: relative; /* Needed for z-index */
+    z-index: 10; /* Ensure slots are above the background image */
+    width: 100%; /* Take full width */
+    height: 100%; /* Take full height */
+    align-items: flex-start; /* Align items to the start */
+    justify-content: center; /* Center content horizontally */
+    padding-top: 50px; /* Adjusted padding */
+    padding-left: 20px; /* Adjusted padding */
+}
+
+
+.left-slots {
+    display: flex; /* Arrange items vertically */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 12px; /* Adjusted gap based on original */
+    min-height: 350px; /* Adjusted min-height based on original */
+    padding: 0px; /* Adjusted padding */
+}
+
+.right-slots {
+    display: flex; /* Arrange items vertically */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 12px; /* Adjusted gap based on original */
+    min-height: 350px; /* Adjusted min-height based on original */
+    padding: 0px; /* Adjusted padding */
+    margin-top: 5px; /* Adjusted margin */
+}
+
+.equipment-slots {
+   margin-top: 44px;
+}
+
+.artefact-slot {
+    margin-top: 44px; 
+}
+
+.tabs {
+    margin-bottom: 15px; /* Adjusted margin based on original */
+    display: flex; /* Arrange tabs horizontally */
+    gap: 20px; /* Adjusted gap based on original */
+    font-size: 20px; /* Adjusted font size based on original */
+}
+
+.tabs span {
+    cursor: pointer;
+    padding: 0; /* Remove padding */
+    border-bottom: none; /* Remove border */
+    transition: none; /* Remove transition */
+    color: #6B664F; /* Adjusted color based on original */
+    opacity: 1; /* Ensure full opacity */
+}
+
+.tabs span.active {
+    font-weight: normal; /* Remove bold */
+    border-bottom-color: transparent; /* Remove border color */
+    color: #CEC597; /* Adjusted active color based on original */
+}
+
+.tabs span:hover{
+  color:#CEC597; /* Adjusted hover color */
+  filter: brightness(1.2); /* Added brightness filter */
+}
+.tabs span:active{
+  color: #CEC597; /* Adjusted active color */
+}
+
+
+.slot-title {
+    margin-bottom: 5px;
+    font-size: 16px; /* Adjusted font size based on original */
+    color: #CEC597; /* Adjusted color based on original */
+}
+
+.slots-row {
+    display: flex;
+    gap: 17px; /* Adjusted gap based on original */
+}
+
+.equipment-row,
+.cosmetics-row {
+    display: flex; /* Use flexbox for rows */
+    flex-direction: column; /* Stack items vertically */
+    gap: 12px; /* Adjusted gap based on original */
+    align-items: center; /* Center items horizontally */
+}
+
+
+/* Styles for the backpack grid */
+.backpack-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjusted to 5 columns based on design image */
+    gap: 8px; /* Adjusted gap based on original item slot spacing */
+    flex-grow: 1; /* Allow grid to take up remaining space */
+    max-height: 432px; /* Limit height to 5 rows (5 * 80px item height + 4 * 8px gap) */
+    overflow-y: auto; /* Add scroll if needed */
+    padding-right: 6px; /* Adjusted padding for scrollbar based on original */
+}
+
+/* Scrollbar styles based on original */
+.backpack-grid::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.backpack-grid::-webkit-scrollbar-thumb {
+  background-color: #CEC597;
+  filter: brightness(1.2);
+  border-radius: 3px;
+}
+
+.backpack-grid::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.backpack-grid {
+  scrollbar-color: #CEC597 transparent;
+  filter: brightness(1.2);
+  scrollbar-width: thin;
+}
+
+
+/* Styles for item slots */
+.item-slot {
+    width: 80px; /* Adjusted size based on original */
+    height: 80px; /* Adjusted size based on original */
+    background-color: rgba(0, 0, 0, 0.99); /* Adjusted background color based on original */
+    border: none; /* Removed border */
+    box-sizing: border-box; /* Include border in element's total width and height */
+    position: relative; /* Needed for absolute positioning of content inside */
+    border-radius: 14px; /* Adjusted border-radius based on original */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the item content container */
+.item-content {
+    position: relative; /* Needed for absolute positioning of quantity */
+    width: 100%; /* Take full width of the slot */
+    height: 100%; /* Take full height of the slot */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the item image */
+.item-image {
+    max-width: 90%; /* Ensure image fits within the slot */
+    max-height: 90%; /* Ensure image fits within the slot */
+    object-fit: contain; /* Scale the image nicely */
+}
+
+/* Styles for the item quantity */
+.item-quantity {
+    position: absolute; /* Position quantity in a corner */
+    bottom: 2px; /* Distance from the bottom */
+    right: 2px; /* Distance from the right */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* White text color */
+    font-size: 12px; /* Smaller font size */
+    padding: 1px 4px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    z-index: 2; /* Ensure it's above the image */
+}
+
+/* Removed the ::before pseudo-element as explicit width/height are used */
